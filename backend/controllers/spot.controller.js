@@ -39,11 +39,9 @@ const post = async function (req, res) {
         });
         res.status(200).json({ spot });
     } catch (error) {
-        return res
-            .status(500)
-            .json({
-                message: `Erreur serveur lors de la création d'un spot !`,
-            });
+        return res.status(500).json({
+            message: `Erreur serveur lors de la création d'un spot !`,
+        });
     }
 };
 
@@ -65,11 +63,9 @@ const put = async function (req, res) {
 
         res.status(200).json({ spot });
     } catch (error) {
-        return res
-            .status(500)
-            .json({
-                message: `Erreur serveur lors de la modification d'un spot !`,
-            });
+        return res.status(500).json({
+            message: `Erreur serveur lors de la modification d'un spot !`,
+        });
     }
 };
 
@@ -95,11 +91,9 @@ const destroy = async function (req, res) {
             message: `Votre spot ${id} a bien été supprimé`,
         });
     } catch (error) {
-        return res
-            .status(500)
-            .json({
-                message: `Erreur serveur lors de la suppession d'un spot !`,
-            });
+        return res.status(500).json({
+            message: `Erreur serveur lors de la suppession d'un spot !`,
+        });
     }
 };
 

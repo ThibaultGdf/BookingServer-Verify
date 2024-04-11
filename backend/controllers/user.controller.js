@@ -47,11 +47,9 @@ const editRole = async function (req, res) {
             message: `Le rôle a bien été modifié à l'utilisateur ${id}`,
         });
     } catch (error) {
-        return res
-            .status(500)
-            .json({
-                message: `Erreur serveur lors de la modification d'un rôle !`,
-            });
+        return res.status(500).json({
+            message: `Erreur serveur lors de la modification d'un rôle !`,
+        });
     }
 };
 const put = async function (req, res) {

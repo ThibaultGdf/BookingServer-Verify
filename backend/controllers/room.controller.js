@@ -76,11 +76,9 @@ const put = async function (req, res) {
 
         res.status(200).json({ message: `La room a bien été modifiée` });
     } catch (error) {
-        return res
-            .status(500)
-            .json({
-                message: `Erreur serveur lors de la modification d'une room`,
-            });
+        return res.status(500).json({
+            message: `Erreur serveur lors de la modification d'une room`,
+        });
     }
 };
 
@@ -112,11 +110,9 @@ const destroy = async function (req, res) {
             .status(200)
             .json({ message: `La room ${id} a bien été supprimée` });
     } catch (error) {
-        return res
-            .status(500)
-            .json({
-                message: `Erreur serveur lors de la suppression d'une room`,
-            });
+        return res.status(500).json({
+            message: `Erreur serveur lors de la suppression d'une room`,
+        });
     }
 };
 
