@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const reservationController = require("../controllers/reservation.controller.js");
+const authenticateMiddleware = require("../middlewares/authenticate.middleware.js");
 
 /* GET */
-router.get("/", reservationController.getAll);
+router.get("/", authenticateMiddleware.isAdmin, reservationController.getAll);
 router.get("/:id", reservationController.getOne);
 
 /* POST */
@@ -13,6 +14,10 @@ router.post("/", reservationController.post);
 router.put("/:id", reservationController.put);
 
 /* DELETE */
-router.delete("/:id", reservationController.destroy);
+router.delete(
+    "/:id",
+    authenticateMiddleware.isAdmin,
+    reservationController.destroy,
+);
 
 module.exports = router;

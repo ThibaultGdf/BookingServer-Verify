@@ -25,6 +25,7 @@ const signUp = async (req, res) => {
             email: email,
             phone_number: phone_number,
             password: hashedPassword,
+            id_role: 1,
         };
 
         // Création de l'utilisateur.
@@ -62,6 +63,7 @@ const signIn = async (req, res) => {
     const payload = {
         id: user.id,
         email: user.email,
+        role: user.id_role,
     };
 
     const token = jwt.sign(payload, SECRET_KEY, { expiresIn: "24h" });
