@@ -8,6 +8,7 @@ module.exports = {
                 loyalty_status: "Gold",
                 number_of_reservations: 1,
                 expiration_date: new Date(),
+                id_user: 1,
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
