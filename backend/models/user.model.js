@@ -18,6 +18,14 @@ module.exports = (sequelize, DataTypes) => {
             email: DataTypes.STRING,
             phone_number: DataTypes.STRING,
             password: DataTypes.STRING,
+            id_role: {
+                type: DataTypes.INTEGER,
+                allowNull: false,
+                references: {
+                    model: sequelize.models.User,
+                    key: "id",
+                },
+            },
         },
         {
             sequelize,
